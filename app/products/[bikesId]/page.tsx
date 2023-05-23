@@ -1,6 +1,7 @@
 import { notFound } from 'next/dist/client/components/not-found';
 import Image from 'next/image';
 import { getBikeById } from '../../../database/bikes';
+import AddQuantity from './AddQuantity';
 
 type Props = { params: { bikesId: string } };
 
@@ -44,6 +45,9 @@ export default function BikesPage(props: Props) {
 
         <div>$3600</div>
         <button>Add to cart</button>
+        <div>
+          <AddQuantity bikesId={singleBike.id} />
+        </div>
       </div>
     </main>
   );

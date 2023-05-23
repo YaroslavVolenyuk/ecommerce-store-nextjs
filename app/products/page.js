@@ -4,8 +4,8 @@ import Link from 'next/link';
 import { bikes } from '../../database/bikes';
 
 export default function ProductPage() {
-  const allCookies = cookies().getAll();
-  console.log(allCookies);
+  // const allCookies = cookies().getAll();
+  // console.log(allCookies);
 
   return (
     <main className="productPage">
