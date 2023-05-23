@@ -9,5 +9,5 @@ export async function addAndSubtractQuantity(bikesId, quantity) {
   );
   // const allCookies = await cookies().getAll();
   // console.log(allCookies);
-  // console.log();
+  console.log('hello ne ');
 }
