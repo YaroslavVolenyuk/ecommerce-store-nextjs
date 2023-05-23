@@ -1,0 +1,202 @@
+* {
+  // color: #fff;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #6f57d8;
+
+  // color: #fff;
+}
+
+footer {
+  background-image: url('../public/images/footer_web.jpg');
+  color: #fff;
+  background-size: cover;
+  height: 60vh;
+  width: 100vw;
+  background-position: left;
+  background-repeat: no-repeat;
+  .footerBlock {
+    background-color: rgb(13, 95, 95);
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    position: relative;
+
+    align-items: end;
+    justify-content: end;
+  }
+}
+
+nav {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  background-color: rgb(0, 0, 0);
+  color: white;
+  padding: 2rem;
+  // position: absolute;
+  // width: 100%;
+}
+
+div {
+  background: transparent;
+}
+
+a {
+  color: #fff;
+}
+
+.bikesNav {
+  display: flex;
+
+  gap: 50px;
+}
+
+.aboutNav {
+  display: flex;
+  gap: 50px;
+}
+
+.hero {
+  background-image: url('../public/images/background-1-10percent.jpg');
+  // background-color: black;
+  background-size: cover;
+  height: 100vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: flex-end;
+  color: #fff;
+}
+
+.productPage {
+  color: #000000;
+  // background-color: #e12121;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: row;
+
+  justify-content: center;
+  align-items: center;
+  padding: 100px;
+  flex-wrap: wrap;
+  gap: 3rem;
+  a {
+    color: #000000;
+  }
+  .item {
+    background-color: aqua;
+  }
+}
+
+.product {
+  // min-width: 400px;
+  padding: 50px;
+  display: flex;
+  // flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  // display: grid;
+  // grid-template-columns: 1fr 1fr;
+  background-color: rgb(255, 255, 255);
+}
+
+.productImage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 100px;
+  // position: relative;
+}
+.productImageParams {
+  width: auto;
+  height: auto;
+}
+
+.productDescription {
+  background-color: #ffffff;
+
+  display: grid;
+  grid-gap: 10px;
+
+  align-items: start;
+  justify-content: center;
+  grid-auto-columns: minmax(100px, 200px);
+  grid-auto-rows: auto;
+  .item {
+    grid-column-start: 1;
+    grid-column-end: 4;
+  }
+}
+
+.aboutPage {
+  color: #fff;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 3rem 20rem 3rem;
+}
+
+@media screen and (max-width: 1400px) {
+  .productDescription {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+  .product {
+    padding: 20px;
+  }
+
+  .productImageParams {
+    width: 50vw;
+    height: auto;
+  }
+
+  .productImage {
+    padding: 30px;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .product {
+    background-color: #57dedb;
+    flex-wrap: wrap;
+    // justify-content: center;
+    align-items: center;
+  }
+  .productImage {
+    padding: 10px;
+  }
+  .productDescription {
+    padding: 0;
+  }
+
+  .productImageParams {
+    width: 90vw;
+    height: auto;
+  }
+
+  nav {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    padding: 0;
+
+    background-color: rgb(210, 76, 76);
+  }
+  .bikesNav {
+    display: flex;
+    flex-wrap: wrap;
+    // flex-direction: column;
+    gap: 0.5rem;
+  }
+}
