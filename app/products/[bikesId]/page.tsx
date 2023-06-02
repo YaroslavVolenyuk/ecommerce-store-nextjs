@@ -2,8 +2,6 @@ import { notFound } from 'next/dist/client/components/not-found';
 import Image from 'next/image';
 import { bikes, getBikeById } from '../../../database/bikes';
 import { parts } from '../../../database/parts';
-import { getCookie } from '../../../util/cookies';
-import { parseJson } from '../../../util/json';
 import AddQuantity from './AddQuantity';
 
 type Props = { params: { bikesId: string } };
@@ -13,9 +11,11 @@ type Props = { params: { bikesId: string } };
 //   comment?: string;
 // };
 
-export default function BikesPage(props: Props) {
-  const singleBike = getBikeById(Number(props.params.bikesId));
-  // console.log('TEST 123', props.params.bikesId);
+export const dynamic = 'force-dynamic';
+
+export default async function BikesPage(props: Props) {
+  const singleBike = await getBikeById(Number(props.params.bikesId));
+  console.log('singleBike is :', singleBike);
 
   if (!singleBike) {
     notFound();
@@ -24,7 +24,6 @@ export default function BikesPage(props: Props) {
   return (
     <main>
       <div className="product">
-        {' '}
         <div className="productImage">
           <Image
             data-test-id="product-image"
@@ -33,31 +32,35 @@ export default function BikesPage(props: Props) {
             width={600}
             height={375}
             alt=""
-            // fill
           />
         </div>
         <div className="productDescription">
           <div>
-            <h1>{singleBike.name}</h1>
+            <h1 style={{ color: '#ffac12' }}>{singleBike.name}</h1>
           </div>
           <div />
           <div />
 
           <div>
             Material:
-            <br /> {singleBike.material}
+            <br /> <p style={{ color: '#a4a4a4' }}>{singleBike.material}</p>
           </div>
           <div>
             Weight: <br />
-            {singleBike.weight} kg
+            <p style={{ color: '#a4a4a4' }}>{singleBike.weight} kg</p>
           </div>
           <div>
             Average customer rating: <br />
-            {singleBike.rating}
+            <p style={{ color: '#a4a4a4' }}>{singleBike.rating}</p>
           </div>
           <div className="item">{singleBike.description}</div>
 
-          <div data-test-id="product-price">${singleBike.price}</div>
+          <div
+            data-test-id="product-price"
+            style={{ color: '#ffac12', fontWeight: 'bold' }}
+          >
+            ${singleBike.price}
+          </div>
 
           <div>
             <AddQuantity
@@ -72,8 +75,6 @@ export default function BikesPage(props: Props) {
           return (
             <div key={`part-div-${part.id}`}>
               <Image
-                // layout="fill"
-                // objectFit="contain"
                 src={`/images/bike-parts-${part.id}.jpg`}
                 alt=""
                 width={100}
