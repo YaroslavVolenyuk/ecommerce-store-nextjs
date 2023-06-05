@@ -2,7 +2,9 @@
 import { useState } from 'react';
 import { addAndSubtractQuantity } from './actions';
 
-export default function AddQuantity(props) {
+type Props = { bikesId: string };
+
+export default function AddQuantity(props: Props) {
   const [quantity, setQuantity] = useState(1);
 
   return (
@@ -12,12 +14,12 @@ export default function AddQuantity(props) {
         min="1"
         value={quantity}
         onChange={(event) => {
-          setQuantity(event.currentTarget.value);
+          setQuantity(Number(event.currentTarget.value));
         }}
       />
       <button
         formAction={async () => {
-          await addAndSubtractQuantity(props.bikesId, Number(quantity));
+          await addAndSubtractQuantity(Number(props.bikesId), Number(quantity));
         }}
       >
         Add to cart

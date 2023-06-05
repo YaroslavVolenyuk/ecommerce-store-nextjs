@@ -67,12 +67,12 @@ export const bikes: Bike[] = [
 //   return bikes.find((bike) => bike.id === id);
 // }
 
-// export const getBikes = cache(async () => {
-//   const bikes = await sql<Bike[]>`
-//     SELECT * FROM bikes
-//  `;
-//   return bikes;
-// });
+export const getBikes = cache(async () => {
+  const bikes = await sql<Bike[]>`
+    SELECT * FROM bikes
+ `;
+  return bikes;
+});
 
 export const getBikeById = cache(async (id: number) => {
   const [bike] = await sql<Bike[]>`

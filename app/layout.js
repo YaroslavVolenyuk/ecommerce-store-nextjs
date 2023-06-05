@@ -1,4 +1,5 @@
 import './globals.scss';
+import { css, Global } from '@emotion/react';
 import { Library } from '@fortawesome/fontawesome-svg-core';
 import { faCartShopping } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -7,6 +8,8 @@ import Link from 'next/link';
 import logo from '../public/images/logo.png';
 import { getCookie } from '../util/cookies';
 import { parseJson } from '../util/json';
+
+// import Head from 'next/head';
 
 export const metadata = {
   title: 'Next.js',
@@ -31,7 +34,9 @@ export default function RootLayout({ children }) {
       <body>
         <nav className="nav">
           <div>
-            <Image src={logo} width={200} height={20} alt="" />
+            <Link href="/">SWITCHBLADE</Link>
+
+            {/* <Image src={logo} width={200} height={20} alt="" /> */}
           </div>
           <div className="bikesNav">
             <Link href="/products">ALL BIKES</Link>

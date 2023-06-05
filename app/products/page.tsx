@@ -8,7 +8,7 @@ export default function ProductPage() {
     <main className="productPage">
       {bikes.map((bike) => {
         return (
-          <div key={`bike-div-${bike.id}`}>
+          <div key={`bike-div-${bike.id}`} className="productPageCards">
             <br />
             <Image
               src={`/images/${bike.name}.jpg`}

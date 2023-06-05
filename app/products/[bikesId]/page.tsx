@@ -1,6 +1,6 @@
 import { notFound } from 'next/dist/client/components/not-found';
 import Image from 'next/image';
-import { bikes, getBikeById } from '../../../database/bikes';
+import { getBikeById } from '../../../database/bikes';
 import { parts } from '../../../database/parts';
 import AddQuantity from './AddQuantity';
 

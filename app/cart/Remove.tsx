@@ -2,7 +2,10 @@
 
 import { deleteProduct } from './actions';
 
-export default function Remove(props) {
+type Props = { id: number };
+
+export default function Remove(props: Props) {
+  console.log(props);
   return (
     <form>
       <button
@@ -14,4 +17,5 @@ export default function Remove(props) {
       </button>
     </form>
   );
+  s;
 }

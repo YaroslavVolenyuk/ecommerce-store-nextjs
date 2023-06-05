@@ -1,9 +1,8 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { bikes } from '../database/bikes';
+import { bikes, getBikes } from '../database/bikes';
 
 export default function Home() {
-  console.log('BIKES FROM DATABASE', bikes[0].name);
   return (
     <main>
       <section className="hero">
@@ -14,7 +13,7 @@ export default function Home() {
 
       <section className="mainShopSection">
         {bikes.map((bike) => (
-          <div className="mainShopSection" key={`bike-div-${bike.id}`}>
+          <div className="mxwainShopSection" key={`bike-div-${bike.id}`}>
             <Image
               className="productImageParams"
               src={`/images/${bike.name}.jpg`}
