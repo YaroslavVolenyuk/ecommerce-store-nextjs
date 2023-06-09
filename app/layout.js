@@ -1,7 +1,9 @@
 import './globals.scss';
 import { faCartShopping } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import Image from 'next/image';
 import Link from 'next/link';
+import payment from '../public/images/icons/payment.png';
 import { getCookie } from '../util/cookies';
 import { parseJson } from '../util/json';
 
@@ -71,6 +73,16 @@ export default function RootLayout({ children }) {
         <footer>
           <section className="footerBlock">
             <div>
+              <p>Switchblade Headquarters:</p>
+              <p> Super-Duper-Straße 10</p>
+              <p>Vienna, Austria, 1010</p>
+              <p>Phone: +43 (677) 123-4567</p>
+
+              <p>Customer Support: +43 (677) 987-6543</p>
+              <p>sales@switchbladebikes.com</p>
+            </div>
+            <br />
+            <div>
               <h2>
                 Each Switchblade model is crafted with meticulous attention to
                 detail, pushing the boundaries of performance and providing
@@ -79,6 +91,13 @@ export default function RootLayout({ children }) {
                 your riding style and embark on your next adventure with
                 confidence.
               </h2>
+            </div>
+            <br />
+            <div>
+              {/* <input className="inputFooter" /> */}
+              PAYMENT METHODS:
+              <br />
+              <Image src={payment} alt="payment" width={250} height={50} />
             </div>
           </section>
         </footer>

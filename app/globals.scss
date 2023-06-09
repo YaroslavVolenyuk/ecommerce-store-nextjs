@@ -37,24 +37,6 @@ h1 {
   // height: 100vh;
 }
 
-footer {
-  background-image: url('../public/images/footer_web.jpg');
-  color: #fff;
-  position: relative;
-  background-size: cover;
-  height: 60vh;
-  width: 100vw;
-  background-position: left;
-  background-repeat: no-repeat;
-  .footerBlock {
-    position: absolute;
-    width: 500px;
-    height: auto;
-    right: 50px;
-    bottom: 50px;
-  }
-}
-
 nav {
   // font-family: 'aeroblade', sans-serif;
   display: flex;
@@ -151,6 +133,29 @@ button {
   border-radius: 2px;
 }
 
+.inputFooter {
+  background-color: #ffac12;
+  width: 300px;
+}
+
+footer {
+  background-image: url('../public/images/footer_web.jpg');
+  color: #fff;
+  position: relative;
+  background-size: cover;
+  height: 60vh;
+  width: 100vw;
+  background-position: left;
+  background-repeat: no-repeat;
+  .footerBlock {
+    position: absolute;
+    width: 500px;
+    height: auto;
+    right: 50px;
+    bottom: 50px;
+  }
+}
+
 @media screen and (max-width: 1500px) {
   * {
     font-size: 1rem;
@@ -206,5 +211,22 @@ button {
 
   .aboutNav {
     gap: 1rem;
+  }
+
+  footer {
+    // position: relative;
+    // background-size: cover;
+    // height: 60vh;
+    // width: 100vw;
+    // background-position: left;
+    // background-repeat: no-repeat;
+    .footerBlock {
+      // position: relative;
+      max-width: 280px;
+      // width: 300px;
+      // height: auto;
+      right: 10%;
+      bottom: 0;
+    }
   }
 }
