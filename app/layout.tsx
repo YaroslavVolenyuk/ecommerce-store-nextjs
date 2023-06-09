@@ -1,15 +1,9 @@
 import './globals.scss';
-import { css, Global } from '@emotion/react';
-import { Library } from '@fortawesome/fontawesome-svg-core';
 import { faCartShopping } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import Image from 'next/image';
 import Link from 'next/link';
-import logo from '../public/images/logo.png';
 import { getCookie } from '../util/cookies';
 import { parseJson } from '../util/json';
-
-// import Head from 'next/head';
 
 export const metadata = {
   title: 'Next.js',
@@ -41,11 +35,19 @@ export default function RootLayout({ children }) {
           <div className="bikesNav">
             <Link href="/products">ALL BIKES</Link>
 
-            <Link href="/products/1">AERO PRO</Link>
-            <Link href="/products/2">TOURING ELITE</Link>
-            <Link href="/products/3">GRAVEL PRO</Link>
+            <Link className="ishidden" href="/products/1">
+              AERO PRO
+            </Link>
+            <Link className="ishidden" href="/products/2">
+              TOURING ELITE
+            </Link>
+            <Link className="ishidden" href="/products/3">
+              GRAVEL PRO
+            </Link>
 
-            <Link href="/products/4">URBAN COMMUTER</Link>
+            <Link className="ishidden" href="/products/4">
+              URBAN COMMUTER
+            </Link>
           </div>
 
           <div className="aboutNav">
@@ -54,7 +56,11 @@ export default function RootLayout({ children }) {
             <Link href="/cart" data-test-id="cart-count">
               <FontAwesomeIcon
                 icon={faCartShopping}
-                style={{ color: '#ffffff', width: '30px' }}
+                style={{
+                  color: '#ffffff',
+                  width: '30px',
+                  alignItems: 'flex-end',
+                }}
               />
 
               <i className="cartQuantity">{totalQuantiy}</i>

@@ -1,8 +1,8 @@
 import { notFound } from 'next/dist/client/components/not-found';
 import Image from 'next/image';
 import { getBikeById } from '../../../database/bikes';
-import { parts } from '../../../database/parts';
 import AddQuantity from './AddQuantity';
+import styles from './productPage.module.scss';
 
 type Props = { params: { bikesId: string } };
 
@@ -15,7 +15,7 @@ export const dynamic = 'force-dynamic';
 
 export default async function BikesPage(props: Props) {
   const singleBike = await getBikeById(Number(props.params.bikesId));
-  console.log('singleBike is :', singleBike);
+  // console.log('singleBike is :', singleBike);
 
   if (!singleBike) {
     notFound();
@@ -23,54 +23,63 @@ export default async function BikesPage(props: Props) {
 
   return (
     <main>
-      <div className="product">
-        <div className="productImage">
-          <Image
-            data-test-id="product-image"
-            className="productImageParams"
-            src={`/images/${singleBike.name}.jpg`}
-            width={600}
-            height={375}
-            alt=""
-          />
-        </div>
-        <div className="productDescription">
-          <div>
-            <h1 style={{ color: '#ffac12' }}>{singleBike.name}</h1>
-          </div>
-          <div />
-          <div />
-
-          <div>
-            Material:
-            <br /> <p style={{ color: '#a4a4a4' }}>{singleBike.material}</p>
-          </div>
-          <div>
-            Weight: <br />
-            <p style={{ color: '#a4a4a4' }}>{singleBike.weight} kg</p>
-          </div>
-          <div>
-            Average customer rating: <br />
-            <p style={{ color: '#a4a4a4' }}>{singleBike.rating}</p>
-          </div>
-          <div className="item">{singleBike.description}</div>
-
-          <div
-            data-test-id="product-price"
-            style={{ color: '#ffac12', fontWeight: 'bold' }}
-          >
-            ${singleBike.price}
-          </div>
-
-          <div>
-            <AddQuantity
-              data-test-id="product-quantity"
-              bikesId={singleBike.id}
+      <div className={styles.product}>
+        <div className={styles.imageAndTable}>
+          <div className={styles.productImage}>
+            <Image
+              data-test-id="product-image"
+              className={styles.productImageParams}
+              src={`/images/${singleBike.name}.jpg`}
+              width={600}
+              height={375}
+              alt=""
             />
+          </div>
+
+          <div className={styles.productDescription}>
+            <div>
+              <h1 style={{ color: '#ffac12' }}>{singleBike.name}</h1>
+            </div>
+            <div />
+            <div />
+
+            <div>
+              Material:
+              <br /> <p style={{ color: '#a4a4a4' }}>{singleBike.material}</p>
+            </div>
+            <div>
+              Weight: <br />
+              <p style={{ color: '#a4a4a4' }}>{singleBike.weight} kg</p>
+            </div>
+            <div>
+              Average customer rating: <br />
+              <p style={{ color: '#a4a4a4' }}>{singleBike.rating}</p>
+            </div>
+
+            <div className={styles.item}>
+              {/* <hr className={styles.hr} /> */}
+              {singleBike.description}
+              {/* <hr className={styles.hr} /> */}
+            </div>
+
+            <div
+              data-test-id="product-price"
+              style={{ color: '#ffac12', fontWeight: 'bold' }}
+            >
+              ${singleBike.price}
+            </div>
+
+            <div>
+              <AddQuantity
+                data-test-id="product-quantity"
+                bikesId={singleBike.id}
+              />
+            </div>
           </div>
         </div>
       </div>
-      <div className="partsSection">
+
+      {/* <div className="partsSection">
         {parts.map((part) => {
           return (
             <div key={`part-div-${part.id}`}>
@@ -83,7 +92,7 @@ export default async function BikesPage(props: Props) {
             </div>
           );
         })}
-      </div>
+      </div> */}
     </main>
   );
 }

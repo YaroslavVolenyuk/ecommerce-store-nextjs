@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'Bicyclette';
+    src: local('Bicyclette Light'), local('Bicyclette-Light'),
+        url('Bicyclette-Light.woff2') format('woff2'),
+        url('Bicyclette-Light.woff') format('woff'),
+        url('Bicyclette-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+  }

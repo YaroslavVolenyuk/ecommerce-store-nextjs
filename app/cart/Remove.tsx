@@ -13,9 +13,8 @@ export default function Remove(props: Props) {
           await deleteProduct(props.id);
         }}
       >
-        Delete
+        Remove
       </button>
     </form>
   );
-  s;
 }

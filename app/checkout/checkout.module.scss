@@ -1,0 +1,30 @@
+.ckeckoutPage {
+  display: flex;
+  // flex-direction: column;
+  background-color: #fff;
+  justify-content: center;
+  a {
+    color: black;
+  }
+
+  .input {
+    background-color: #f5f5f5;
+    width: 600px;
+    height: 25px;
+    margin: 15px;
+  }
+}
+
+.inputFields {
+  padding: 10px;
+  border-radius: 15px;
+  margin: 50px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  width: 800px;
+}
+
+.link {
+  text-align: end;
+  margin: 10px;
+  padding-right: 50px;
+}

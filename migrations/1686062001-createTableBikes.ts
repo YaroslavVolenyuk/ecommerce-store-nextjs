@@ -2,18 +2,16 @@ import { Sql } from 'postgres';
 
 export async function up(sql: Sql) {
   await sql`
-    CREATE TABLE bikes (
+CREATE TABLE bikes (
 id integer PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
 name varchar(30) NOT NULL,
 type varchar(30) NOT NULL,
-price varchar(10) NOT NULL,
--- price int(10) NOT NULL,
+price int,
 material varchar(20),
 weight varchar(10),
-rating varchar(10),
+rating varchar(10) NOT NULL,
 description varchar(500) NOT NULL
-);
-
+)
   `;
 }
 
