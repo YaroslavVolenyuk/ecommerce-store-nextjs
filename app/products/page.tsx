@@ -6,6 +6,11 @@ import styles from './allProducts.module.scss';
 // import { bikes } from '../../database/bikes';
 // import { getCookie } from '../../util/cookies';
 
+export const metadata = {
+  title: { default: ' Switchblade' },
+  description: 'Try to catch me',
+};
+
 export default async function ProductPage() {
   const bikes = await getBikes();
 

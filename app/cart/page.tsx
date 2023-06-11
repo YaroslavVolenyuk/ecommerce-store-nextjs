@@ -31,6 +31,7 @@ export default async function CartPage() {
     return { ...bike, quantity: matchingBikeFromCookie?.quantity };
   });
 
+  console.log('bikesAddedToCart', bikesAddedToCart);
   const totalPrice = bikesAddedToCart.reduce(
     (accum, bikesAtCart) => accum + bikesAtCart.price,
     0,

@@ -6,6 +6,11 @@ import styles from './productPage.module.scss';
 
 type Props = { params: { bikesId: string } };
 
+export const metadata = {
+  title: { default: ' Switchblade' },
+  description: 'Try to catch me',
+};
+
 // type Cookie = {
 //   id: number;
 //   comment?: string;
